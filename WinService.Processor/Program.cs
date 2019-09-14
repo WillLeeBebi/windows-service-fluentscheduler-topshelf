@@ -1,15 +1,17 @@
-﻿namespace WinService.Processor
+﻿using WinService.Core;
+
+namespace WinService.Processor
 {
-    internal class Program
+    internal static class Program
     {
         private static void Main()
         {
             var serviceConfig = new ServiceConfig
             {
-                ServiceTitle = "GeoMongo Consumer",
-                ServiceDescription = "GeoMongo Consumer for non-Uavt Addresses"
+                ServiceTitle = "Data Processor Windows Service",
+                ServiceDescription = "This Is a Windows Service Description"
             };
-            ServiceConfig.StartService<WindowsService>(serviceConfig);
+            ServiceConfig.StartService<ProcessService>(serviceConfig);
         }
     }
 }

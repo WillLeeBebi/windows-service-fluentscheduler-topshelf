@@ -53,9 +53,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="IWindowsService.cs" />
+    <Compile Include="ProcessJob.cs" />
+    <Compile Include="ProcessRegistry.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ServiceConfig.cs" />
-    <Compile Include="WindowsService.cs" />
+    <Compile Include="ProcessService.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

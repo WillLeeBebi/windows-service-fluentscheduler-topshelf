@@ -1,8 +1,9 @@
 ﻿using System.Diagnostics;
+using FluentScheduler;
 
 namespace WinService.Core
 {
-    public class WindowsService : IWindowsService
+    public class ProcessService : IWindowsService
     {
         public void ServiceContinued()
         {
@@ -17,6 +18,7 @@ namespace WinService.Core
         public void ServiceStarted()
         {
             Logger.Write("Service Started");
+            JobManager.Initialize(new ProcessRegistry());
         }
 
         public void ServiceStopped()
@@ -29,7 +31,7 @@ namespace WinService.Core
     {
         public static void Write(string message)
         {
-            string cs = "WindowsServiceLogger";
+            const string cs = "WindowsServiceLogger";
             if (!EventLog.SourceExists(cs))
                 EventLog.CreateEventSource(cs, "Application");
 
